@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:stretchColumns="1"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp">
+    <TableRow
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="fill_parent"> 
+        <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="移动网络定时开关"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+        <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    </TableRow> 
+    <View android:layout_height="2dip" android:background="#FF909090" /> 
+    <TableRow
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_height="fill_parent"> 
+        <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="每次开启时长" />
+    </TableRow>
+    <TableRow
+        android:layout_height="fill_parent">
+        <TextView
+        android:id="@+id/onTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00小时 00分钟"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+    </TableRow>
+    <SeekBar
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/onTimeseekBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <View android:layout_height="2dip" android:background="#FF909090" /> 
+    <TableRow
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_height="fill_parent"> 
+        <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="每次关闭时长" />
+    </TableRow>
+    <TableRow
+        android:layout_height="fill_parent">
+        <TextView
+        android:id="@+id/offTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00小时 00分钟"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+    </TableRow>
+  
+    <SeekBar
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/offTimeseekBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    
+    <View android:layout_height="2dip" android:background="#FF909090" />
+</TableLayout>
+<!-- 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp"
+        android:text="移动网络定时开关"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+        <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true" />
+    </LinearLayout>
+
+    
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="32dp"
+        android:text="每次开启时长" />
+
+    
+
+    <SeekBar
+        android:id="@+id/onTimeseekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/onTimeTextView"
+        android:layout_below="@+id/onTimeTextView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/offTimeTextView"
+        android:layout_alignLeft="@+id/onTimeseekBar"
+        android:layout_marginBottom="32dp"
+        android:text="每次关闭时长" />
+
+    <SeekBar
+        android:id="@+id/offTimeseekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/offTimeTextView" />
+
+    <TextView
+        android:id="@+id/onTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:text="00小时 00分钟"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/offTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:text="00小时 00分钟"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18dp" />
+
+</RelativeLayout>
+-->
