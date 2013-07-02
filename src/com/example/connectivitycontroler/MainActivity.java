@@ -140,6 +140,7 @@ public class MainActivity extends Activity {
 				SharedPreferences.Editor editor=_state.edit();
 				editor.putInt("onTime", _onTimeCount);
 				editor.putInt("offTime",_offTimeCount);
+				editor.putInt("timeUnit", _timeUnit);
 				editor.commit();
 				if(_isServiceRunning!=true){
 					Intent i=new Intent();
