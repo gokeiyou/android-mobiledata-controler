@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo.State;
 import android.net.wifi.WifiManager;
 
 
@@ -31,6 +32,7 @@ public class ConnectorManager {
 		wifiManager=(WifiManager)
 				context.getSystemService(Context.WIFI_SERVICE);
 	}
+	
 	private void mobileDataManagerInit() {
 		// TODO Auto-generated method stub
 		mobileDataManager=(ConnectivityManager)
@@ -66,11 +68,14 @@ public class ConnectorManager {
 			}
 		
 	}
-	public boolean toggleWiFi(boolean enabled) {   
+	public boolean toggleWifi(boolean enabled) {   
 	    return wifiManager.setWifiEnabled(enabled);  
 
 	}
-	public void toggleConectivity(boolean enabled){
+	public int wifiSate(){
+		return wifiManager.getWifiState();
+	}
+	public void toggleMobileData(boolean enabled){
 		try{
 		// 调用setMobileDataEnabled方法
 		setMobileDataEnabledMethod.invoke(ICMObject, enabled);
@@ -81,6 +86,13 @@ public class ConnectorManager {
 		}catch(InvocationTargetException e){
 			e.printStackTrace();
 		}
+	}
+	public int mobileDataState(){
+		State state = mobileDataManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState();
+		if(state!=State.CONNECTED){
+			return 0;
+		}
+		return 1;
 	}
 }
 /*

@@ -4,5 +4,7 @@
     <string name="app_name">ConnectivityControler</string>
     <string name="action_settings">Settings</string>
     <string name="prefs_name">service_state</string><string name="hello_world">Hello world!</string>
+    <string name="mobiledata_keepornot">是否一直打开数据链路？</string>
+    <string name="exit">退出</string>
 	
 </resources>
